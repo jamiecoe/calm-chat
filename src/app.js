@@ -7,6 +7,10 @@ const saveChatLog = require("./saveChatLog");
 
 const bodyParser = require("body-parser");
 
+const cors = require('cors');
+
+app.use(cors());
+
 app.set("port", process.env.PORT || 3001);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

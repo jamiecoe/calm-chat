@@ -1,0 +1,77 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.4
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "little-window",
+    "version": "1.0.0",
+    "description": "A chatbot featured on all Chayn websites in an iframe, which quickly directs users to Chayn’s relevant internal or external resources",
+    "main": "config.js",
+    "scripts": {
+      "start": "node ./src/server.js",
+      "start:test": "NODE_ENV=production node ./src/server.js",
+      "postinstall": "cd client && npm install && npm run build",
+      "test": "tape ./src/test/test.js | tap-spec",
+      "server": "nodemon ./src/server.js",
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "client": "cd client && npm start"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/fac-12/Little-Window.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/fac-12/Little-Window/issues"
+    },
+    "homepage": "https://github.com/fac-12/Little-Window#readme",
+    "dependencies": {
+      "apiai": "^4.0.3",
+      "body-parser": "^1.18.2",
+      "env2": "^2.2.0",
+      "express": "^4.16.2",
+      "google-auth-library": "^0.12.0",
+      "googleapis": "^25.0.0",
+      "nodemon": "^1.14.12",
+      "pg-promise": "^7.4.1",
+      "request": "^2.83.0",
+      "uuid": "^3.2.1"
+    },
+    "devDependencies": {
+      "concurrently": "^3.5.1",
+      "supertest": "^3.0.0",
+      "tap-spec": "^4.1.1",
+      "tape": "^4.8.0"
+    },
+    // "engines": {
+    //   "node": "8.7.0"
+    // }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /home/sandy/playground/serious-playground/calm-chat/package.json: Unexpected token / in JSON at position 1315
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:770:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:103:13
+      at <anonymous>

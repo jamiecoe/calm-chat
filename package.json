@@ -8,8 +8,8 @@
     "start:test": "NODE_ENV=production node ./src/server.js",
     "postinstall": "cd client && npm install && npm run build",
     "test": "tape ./src/test/test.js | tap-spec",
-    "server": "nodemon ./src/server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon ./src",
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
     "client": "cd client && npm start"
   },
   "repository": {
@@ -25,6 +25,7 @@
   "dependencies": {
     "apiai": "^4.0.3",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "env2": "^2.2.0",
     "express": "^4.16.2",
     "google-auth-library": "^0.12.0",
@@ -39,8 +40,5 @@
     "supertest": "^3.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0"
-  },
-  "engines": {
-    "node": "8.7.0"
   }
 }
